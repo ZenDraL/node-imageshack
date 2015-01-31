@@ -34,6 +34,7 @@ var Imageshack = (function () {
                 this.api_key = configobject.api_key;
                 this.email = configobject.email;
                 this.passwd = configobject.passwd;
+                this.adult_content = configobject.adult_content;
                 this.api_host = "api.imageshack.com";
                 this.api_url = "http://" + this.api_host + "/v2/";
             }
@@ -166,6 +167,7 @@ var Imageshack = (function () {
                     form.append('api_key',  this.api_key);
                     form.append("auth_token",this.auth_id);
                     form.append("public","false");
+                    form.append("adult_content", this.adult_content === true ? "true" : "false");
                     form.append("files",streamobj);
 
 
